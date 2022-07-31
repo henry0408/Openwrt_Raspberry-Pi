@@ -58,6 +58,7 @@
       <img width="800" height="500" src="https://github.com/henry0408/screenshots/blob/12b195662410e911a21d279c5ed5eeff04d57678/img5.png">
       
 8. 重新登陆到Openwrt:white_check_mark:
+
    浏览器中输入新设定的地址：192.168.3.10，输入密码“password”便可重新登陆
    
       <img width="900" height="680" src="https://github.com/henry0408/screenshots/blob/13eaac551b39b80b0212186dbb86281a410b589b/img8.png">
