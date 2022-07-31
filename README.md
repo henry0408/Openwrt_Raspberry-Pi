@@ -34,7 +34,7 @@
 7. 更改LAN口配置:white_check_mark:
    1. 在Interface中选择LAN的edit
    
-      <img width="800" height="400" src="https://github.com/henry0408/screenshots/blob/a975bede140b3e3bc7f7b7b04bb5e828da51a725/img4.png">
+      <img width="800" height="350" src="https://github.com/henry0408/screenshots/blob/a975bede140b3e3bc7f7b7b04bb5e828da51a725/img4.png">
    
    2. 更改Ipv4地址和网关
    
@@ -55,7 +55,7 @@
       
       * 注意：使用官方版本要在90s内完成拔掉网线并插入LAN口的操作，否则会启动rollback
       
-      <img width="800" height="500" src="https://github.com/henry0408/screenshots/blob/12b195662410e911a21d279c5ed5eeff04d57678/img5.png">
+      <img width="800" height="470" src="https://github.com/henry0408/screenshots/blob/12b195662410e911a21d279c5ed5eeff04d57678/img5.png">
       
 8. 重新登陆到Openwrt:white_check_mark:
 
