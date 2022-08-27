@@ -32,6 +32,7 @@
       <img width="800" height="500" src="https://github.com/henry0408/screenshots/blob/87f26a117e5cdb4c0c0e29f865c979babef965a7/img3.png">
       
 7. 更改LAN口配置:white_check_mark:
+
    1. 在Interface中选择LAN的edit
    
       <img width="800" height="350" src="https://github.com/henry0408/screenshots/blob/a975bede140b3e3bc7f7b7b04bb5e828da51a725/img4.png">
@@ -102,4 +103,20 @@
       
       其中左侧为Windows目录，右侧为OpenWRT目录，可以直接拖拽
 
-      
+## 2. 新建一个界面（在菜单栏System导航下添加HelloWorld选项卡） 
+
+   * 使用WinSCP登录开发板，进入/usr/lib/lua/luci/controller/admin目录下，打开system.lua文件进行编辑，添加一行语句：
+
+   ![image](https://user-images.githubusercontent.com/58734009/187031900-c6afabde-991f-4da4-a167-64e4daf84b33.png)
+
+   * 进入/usr/lib/lua/luci/view/admin_system目录下，新建helloworld.htm文件，并添加一行：
+
+      <%+header%> <h1><%: HelloWorld %></h1> <%+footer%> 
+   
+   * 保存后重启树莓派并登陆OPenWRT网页，可以看到效果：
+   
+   ![image](https://user-images.githubusercontent.com/58734009/187032098-562add46-2a12-477f-af45-dfc0bac402c1.png)
+   
+   ![image](https://user-images.githubusercontent.com/58734009/187032104-38147383-e373-4622-b858-bf6f4fa9212e.png)
+
+
