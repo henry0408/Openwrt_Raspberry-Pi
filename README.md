@@ -92,7 +92,7 @@
    
       * 点击新建会话，协议选择FTP
       
-      ![image](https://user-images.githubusercontent.com/58734009/187030172-685e5f44-d31c-44a7-ad7a-b89099ff2510.png)
+      ![image](https://user-images.githubusercontent.com/58734009/187031532-33b22c0a-da3c-4724-adfa-675c2b341aac.png)
 
       * 端口切换称22，主机名为OPenWrt开发板的ip：我们的为192.168.3.10，用户名和密码分别为OpenWRT网页登陆时用的用户名和密码：我们的分别为root和password
       
