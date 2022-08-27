@@ -77,3 +77,29 @@
    1. 主要的reference视频讲解：https://www.v2ex.com/t/835585 Or https://www.youtube.com/watch?v=iyQjjgOfPnQ
    2. https://www.youtube.com/watch?v=w7rwNF2Q3lM
    3. https://zhuanlan.zhihu.com/p/509064156
+
+
+# OpenWRT的Web界面
+
+## 1. 要访问openwrt文件，首先需要远程登陆到开发板（树莓派）
+   1. 在网页中访问192.168.3.10进入openwrt，在系统--> 管理权中找到“网关端口”，并确认其已经打开
+   
+   ![image](https://user-images.githubusercontent.com/58734009/187030054-378676b0-b0d1-4ef8-89af-13f82e0cc002.png)
+   
+   否则之后的步骤会出现“由于目标计算机积极拒绝%2C无法连接。+连接失败”等错误
+
+   2. 下载并安装WinSCP，用于在Windows和开发板之间传输并可以直接修改文件
+   
+      * 点击新建会话，协议选择FTP
+      
+      ![image](https://user-images.githubusercontent.com/58734009/187030172-685e5f44-d31c-44a7-ad7a-b89099ff2510.png)
+
+      * 端口切换称22，主机名为OPenWrt开发板的ip：我们的为192.168.3.10，用户名和密码分别为OpenWRT网页登陆时用的用户名和密码：我们的分别为root和password
+      
+      * 点击登陆，效果如图
+      
+      ![image](https://user-images.githubusercontent.com/58734009/187030255-7f1c10c4-9530-482a-a792-272ff2158973.png)
+      
+      其中左侧为Windows目录，右侧为OpenWRT目录，可以直接拖拽
+
+      
