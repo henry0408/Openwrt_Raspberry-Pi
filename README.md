@@ -14,7 +14,7 @@
 2. 用一根网线将树莓派和电脑链接，并给树莓派上电，断掉电脑其他网络连接:white_check_mark:
 3. 在电脑中更改**以太网**属性（主要是防止冲突）:white_check_mark:
 
-   <img width="800" height="500" src="https://github.com/henry0408/screenshots/blob/09b152f2bf1435fc6d20f64465d3ea6396f18254/img1.png">
+   ![img1](https://user-images.githubusercontent.com/58734009/187032137-9dd291a7-f90f-4391-8275-e965c95bd0fc.png)
    
    1. p.s. 默认网关为树莓派openwrt的默认地址：192.168.1.1
 
@@ -25,17 +25,17 @@
 6. 开启树莓派本身的wifi功能:white_check_mark:
    1. Network--> Wireless--> 选择SSID为OpenWrt--> 点击Enable--> Save
    
-      <img width="800" height="350" src="https://github.com/henry0408/screenshots/blob/67a411e77a09ef5c0031e8b1828d079ed128f58e/img2.png">
+      ![img2](https://user-images.githubusercontent.com/58734009/187032145-192b54c7-fdec-4138-ba9b-bd0bff473ff6.png)
    
    2. 点击Edit，在Operating frequency中把Mode改成Legacy，channel改成auto，点击保存
    
-      <img width="800" height="500" src="https://github.com/henry0408/screenshots/blob/87f26a117e5cdb4c0c0e29f865c979babef965a7/img3.png">
+      ![img3](https://user-images.githubusercontent.com/58734009/187032154-8c8e32c2-7e31-4350-8d87-b22025bfab86.png)
       
 7. 更改LAN口配置:white_check_mark:
 
    1. 在Interface中选择LAN的edit
    
-      <img width="800" height="350" src="https://github.com/henry0408/screenshots/blob/a975bede140b3e3bc7f7b7b04bb5e828da51a725/img4.png">
+      ![img4](https://user-images.githubusercontent.com/58734009/187032164-df46a3b1-05f0-4ed6-94f6-57f54f15cde7.png)
    
    2. 更改Ipv4地址和网关
    
@@ -45,9 +45,9 @@
       
       注意：网关为我的主路由的IPv4，为了避免冲突，openwrt的IPv4改成了同一网段下不同的地址（2-254都可以），建议在电脑终端cmd--> 输入ipconfig查看一下
       
-         <img width="400" height="150" src="https://github.com/henry0408/screenshots/blob/ae8aee5a0c373eaf9281126a24a60cf14479456e/img6.png">
+         ![img6](https://user-images.githubusercontent.com/58734009/187032179-56f4a1a6-47e8-487c-b7de-7605f29e5729.png)
          
-         <img width="800" height="180" src="https://github.com/henry0408/screenshots/blob/ae8aee5a0c373eaf9281126a24a60cf14479456e/img7.png">
+         ![img7](https://user-images.githubusercontent.com/58734009/187032184-721abc0f-78a6-4b66-b270-d2e7e7c6f9f9.png)
       
    ***为了可玩性更高，下面截图都为使用SuLingGG的GitHub中下载的固件并使用的截图***
       
@@ -56,23 +56,23 @@
       
       * 注意：使用官方版本要在90s内完成拔掉网线并插入LAN口的操作，否则会启动rollback
       
-      <img width="800" height="470" src="https://github.com/henry0408/screenshots/blob/12b195662410e911a21d279c5ed5eeff04d57678/img5.png">
+      ![img5](https://user-images.githubusercontent.com/58734009/187032175-f75a7f18-e3d4-4f6e-8af0-9bdf60c2fde7.png)
       
 8. 重新登陆到Openwrt:white_check_mark:
 
    浏览器中输入新设定的地址：192.168.3.10，输入密码“password”便可重新登陆
    
-      <img width="900" height="680" src="https://github.com/henry0408/screenshots/blob/13eaac551b39b80b0212186dbb86281a410b589b/img8.png">
+      ![img8](https://user-images.githubusercontent.com/58734009/187032187-67b40d5c-836c-45a3-938a-cf86303437ee.png)
       
 9. 手机或其他设备此时连接名为“Openwrt”的wifi可以成功连接并上网（主路由为HUAWEI-CA1P7S）:white_check_mark:
 
-   <img width="280" height="400" src="https://github.com/henry0408/screenshots/blob/850ec31085a6652dd402c94fa4a1cfc346500914/img9.png"><img width="280" height="500" src="https://github.com/henry0408/screenshots/blob/850ec31085a6652dd402c94fa4a1cfc346500914/img10.png">
+   ![img9](https://user-images.githubusercontent.com/58734009/187032191-0bb6ac83-2237-4271-90fe-226a4ca44093.png)![img10](https://user-images.githubusercontent.com/58734009/187032194-2e9df5ba-ef46-4aaf-b67d-6d075b918700.png)
 
    上图可以看到主路由依旧为192.168.3.1
    
 10. 设置旁路由“OpenWrt”密码，网络--> 无线 --> 无线安全， 我设置的为15042237015:white_check_mark:
 
-   <img width="800" height="480" src="https://github.com/henry0408/screenshots/blob/8bc0b4ea2949b7d06e7019453d5752efe4a9bc97/img11.png">
+   ![img11](https://user-images.githubusercontent.com/58734009/187032202-8df57820-8a98-4f29-9a67-5815053a943c.png)
    
 11. 一些reference:white_check_mark:
    1. 主要的reference视频讲解：https://www.v2ex.com/t/835585 Or https://www.youtube.com/watch?v=iyQjjgOfPnQ
