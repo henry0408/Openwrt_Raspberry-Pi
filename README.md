@@ -1,6 +1,10 @@
 # Openwrt
 
-# 使用树莓派+openwrt配置旁路由以及科学上网工具:wink:
+[使用树莓派+openwrt配置旁路由](#head1)
+
+[OpenWRT的Web界面开发](#head2)
+
+# <Span id = "head1">1. 使用树莓派+openwrt配置旁路由以及科学上网工具:wink:
 
 ## Steps::bulb:
 1. Openwrt树莓派烧录:white_check_mark:
@@ -80,7 +84,7 @@
    3. https://zhuanlan.zhihu.com/p/509064156
 
 
-# OpenWRT的Web界面
+# <Span id = "head2">2. OpenWRT的Web界面</span>
 
 ## 1. 要访问openwrt文件，首先需要远程登陆到开发板（树莓派）
    1. 在网页中访问192.168.3.10进入openwrt，在系统--> 管理权中找到“网关端口”，并确认其已经打开
@@ -106,12 +110,19 @@
 ## 2. 新建一个界面（在菜单栏System导航下添加HelloWorld选项卡） 
 
    * 使用WinSCP登录开发板，进入/usr/lib/lua/luci/controller/admin目录下，打开system.lua文件进行编辑，添加一行语句：
+   
+      ```
+      entry({"admin", "system", "Helloworld"}, template("admin_system/helloworld"), _("Helloworld"), 99)
+      ```
 
    ![image](https://user-images.githubusercontent.com/58734009/187031900-c6afabde-991f-4da4-a167-64e4daf84b33.png)
 
    * 进入/usr/lib/lua/luci/view/admin_system目录下，新建helloworld.htm文件，并添加一行：
-
-      <%+header%> <h1><%: HelloWorld %></h1> <%+footer%> 
+   
+   
+      ```
+      <%+header%> <h1><%: HelloWorld %></h1> <%+footer%>
+      ```
    
    * 保存后重启树莓派并登陆OPenWRT网页，可以看到效果：
    
