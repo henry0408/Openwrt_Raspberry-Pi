@@ -119,7 +119,6 @@
 
    * 进入/usr/lib/lua/luci/view/admin_system目录下，新建helloworld.htm文件，并添加一行：
    
-   
       ```
       <%+header%> <h1><%: HelloWorld %></h1> <%+footer%>
       ```
@@ -163,3 +162,4 @@
    
       ![image](https://user-images.githubusercontent.com/58734009/187058886-78f0f1d9-2bc5-4715-80d4-d2b786b51dca.png)
 
+   p.s. LUA中，用--表示单行注释，--[[ --]]表示多行注释
