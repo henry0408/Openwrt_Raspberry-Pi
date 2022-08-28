@@ -130,4 +130,38 @@
    
    ![image](https://user-images.githubusercontent.com/58734009/187032104-38147383-e373-4622-b858-bf6f4fa9212e.png)
 
+## 3. 新建一个一级界面，其中包含一个二级界面（菜单栏新建“Example1”导航，并在其中添加“First”选项卡）
+   * 创建 lua 脚本文件：/usr/lib/lua/luci/controller/example1.lua
+   * 添加内容如下
+      ```
+      --第一行声明模块路径
+      module("luci.controller.example1", package.seeall)
+      
+      function index()
+      --[[
+         创建一级菜单 example，firstchild()表示链接到其第一个子节点，即
+         当我们单击菜单 Example 时，LuCI 将调度其第一个子节点。"Example"即
+         在网页中显示的菜单。60 表示其顺序，LuCI 自带的模块的顺序为：
+         Administration(10),Status(20),System(30),Network(50),Logout(90)。
+         call("first_action")表示当子节点被调度时将执行下面定义的方法 first_action()
+       --]]
+         entry({"admin", "example1"}, firstchild(), "Example1", 60)
+         entry({"admin", "example1", "first"}, call("first_action"), "First")
+      end
+      
+      function first_action()
+      --加载/usr/lib/lua/luci/view/header.htm
+      luci.template.render("header")
+      --输出 html 内容
+      luci.http.write("<h1>Hello World</h1>")
+      end
+      ```
+
+      ![image](https://user-images.githubusercontent.com/58734009/187058868-832c0afe-0644-4477-81e3-93b1f338f779.png)
+      
+   * 查看网页端变化
+   
+      ![image](https://user-images.githubusercontent.com/58734009/187058886-78f0f1d9-2bc5-4715-80d4-d2b786b51dca.png)
+
+   p.s. LUA中，用--表示单行注释，--[[ --]]表示多行注释
 
