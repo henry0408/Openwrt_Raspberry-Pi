@@ -38,3 +38,7 @@ entry (path, target, title, order)
   * target 指定当该节点被调度（即用户点击）时的行为，主要有三种：call、template 和 cbi，后面有 3 个实例。
   * title：标题，即我们在网页中看到的菜单
   * order：同一级节点之间的顺序，越小越靠前，反之越靠后（可选）
+
+
+6. 实例3：cbi（P74）
+该方法与 UCI 配置息息相关。主要用来修改 UCI 配置文件以及使配置生效
