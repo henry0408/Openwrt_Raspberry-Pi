@@ -43,6 +43,30 @@ entry (path, target, title, order)
   * title：标题，即我们在网页中看到的菜单
   * order：同一级节点之间的顺序，越小越靠前，反之越靠后（可选）
 
+LuCI 默认开启了缓存机制，这样当我们修改了代码后，不会立即生效，除非删除缓存，操作如下：
 
-6. 实例3：cbi（P74）
+![image](https://user-images.githubusercontent.com/58734009/191983451-823d94ab-1064-47fb-bed0-3f007d8919df.png)
+
+6. 实例1
+![image](https://user-images.githubusercontent.com/58734009/191985893-a6245819-a5e3-40d2-a02f-870f02bee073.png)
+
+![image](https://user-images.githubusercontent.com/58734009/191990973-49a7933c-1ca5-402a-bd20-141afe49ecb1.png)
+
+7. 实例2：template
+
+效果和上面一样，不同的是上节使用 call 调度执行一个函数，本节直接调用一个 html 页面。
+创建 html 文件：/usr/lib/lua/luci/view/example# ls example.htm，其内容如下
+
+![image](https://user-images.githubusercontent.com/58734009/191991452-e7f57795-bf53-4b4b-ae3d-2dc2ce19bb47.png)
+
+这里的<% %>用来在 html 代码中嵌入 LUA 脚本，这里的<%+header%>表示首先加载/usr/lib/lua/luci/view/header.htm
+
+修改后的/usr/lib/lua/luci/controller/example.lua 内容如下：
+
+![image](https://user-images.githubusercontent.com/58734009/191992222-af228ff1-49a9-44a6-932b-4c2aeafad24a.png)
+
+
+8. 实例3：cbi（P74）
 该方法与 UCI 配置息息相关。主要用来修改 UCI 配置文件以及使配置生效
+
+
