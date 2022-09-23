@@ -65,6 +65,7 @@ LuCI 默认开启了缓存机制，这样当我们修改了代码后，不会立
 
 ![image](https://user-images.githubusercontent.com/58734009/191992222-af228ff1-49a9-44a6-932b-4c2aeafad24a.png)
 
+对比前一种方法，entry只是从call变成了template
 
 8. 实例3：cbi（P74）
 该方法与 UCI 配置息息相关。主要用来修改 UCI 配置文件以及使配置生效
