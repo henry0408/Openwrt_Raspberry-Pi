@@ -4,15 +4,15 @@ HTML教程：
 
 https://www.w3schools.com/tags/tag_th.asp
 
-1. 轻量级 LUA 语言的官方版本只包括一个精简的核心和最基本的库。这使得 LUA 体积小、启动速度快，从而适合嵌入在别的程序里。UCI 是 Openwrt 中为实现所有系统配置的一个统一接口，
+## 1. 轻量级 LUA 语言的官方版本只包括一个精简的核心和最基本的库。这使得 LUA 体积小、启动速度快，从而适合嵌入在别的程序里。UCI 是 Openwrt 中为实现所有系统配置的一个统一接口，
 英文名 Unified Configuration Interface，即统一配置接口。LuCI 即是这两个项目的合体，可以实现路由的网页配置界面。
 
 （最好先学习 LUA 脚本编程）
 
-2. LuCI 使用 MVC（模型/视图/控制）模型，在/usr/lib/lua/luci/下有三个目录 model、view、controller，它们分别对应 M、 V、C。
+## 2. LuCI 使用 MVC（模型/视图/控制）模型，在/usr/lib/lua/luci/下有三个目录 model、view、controller，它们分别对应 M、 V、C。
 我们要做的主要工作就是基于 LuCI 框架编写 LUA 脚本、在 html 页面中嵌入 LUA 脚本。
 
-3. LuCI 将网页中的每一个菜单视作一个节点，如下所示：
+## 3. LuCI 将网页中的每一个菜单视作一个节点，如下所示：
 
 ![image](https://user-images.githubusercontent.com/58734009/187056730-6200598a-b952-4c3c-9b22-0515704e1aa7.png)
 
@@ -21,7 +21,7 @@ https://www.w3schools.com/tags/tag_th.asp
 在我们使用浏览器向路由器发起请求时，LuCI 会从 controller 目录下的 index.lua 开始组织这些节点。index.lua 中定义了根节点
 root，其他所有的节点都挂在这个根节点上。
 
-4. 我们可以将 controller 目录下的这些.lua 文件叫做模块，这样的模块文件的第一行必须是如下格式：
+## 4. 我们可以将 controller 目录下的这些.lua 文件叫做模块，这样的模块文件的第一行必须是如下格式：
 
 ```
 module("luci.controller.xx.xx.xx", package.seeall)
@@ -33,7 +33,7 @@ module("luci.controller.xx.xx.xx", package.seeall)
 ![image](https://user-images.githubusercontent.com/58734009/187058219-b2f73b5a-d5c0-4052-9106-b777fbdbdd37.png)
 
 
-5. 接着是定义一个 index 方法，其主要工作是调用 entry 方法创建节点，可以多次调用创建多个节点。其调用方式如下：
+## 5. 接着是定义一个 index 方法，其主要工作是调用 entry 方法创建节点，可以多次调用创建多个节点。其调用方式如下：
 
 ```
 entry (path, target, title, order)
@@ -47,12 +47,12 @@ LuCI 默认开启了缓存机制，这样当我们修改了代码后，不会立
 
 ![image](https://user-images.githubusercontent.com/58734009/191983451-823d94ab-1064-47fb-bed0-3f007d8919df.png)
 
-6. 实例1
+## 6. 实例1
 ![image](https://user-images.githubusercontent.com/58734009/191985893-a6245819-a5e3-40d2-a02f-870f02bee073.png)
 
 ![image](https://user-images.githubusercontent.com/58734009/191990973-49a7933c-1ca5-402a-bd20-141afe49ecb1.png)
 
-7. 实例2：template
+## 7. 实例2：template
 
 效果和上面一样，不同的是上节使用 call 调度执行一个函数，本节直接调用一个 html 页面。
 创建 html 文件：/usr/lib/lua/luci/view/example# ls example.htm，其内容如下
@@ -67,7 +67,9 @@ LuCI 默认开启了缓存机制，这样当我们修改了代码后，不会立
 
 对比前一种方法，entry只是从call变成了template
 
-8. 实例3：cbi（P74）
+firstchild (): Alias the first (lowest order) page automatically
+
+## 8. 实例3：cbi（P74）
 该方法与 UCI 配置息息相关。主要用来修改 UCI 配置文件以及使配置生效
 
 
