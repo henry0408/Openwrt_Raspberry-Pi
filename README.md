@@ -154,6 +154,7 @@
       --输出 html 内容
       luci.http.write("<h1>Hello World</h1>")
       end
+         
       ```
 
       ![image](https://user-images.githubusercontent.com/58734009/187058868-832c0afe-0644-4477-81e3-93b1f338f779.png)
@@ -163,3 +164,7 @@
       ![image](https://user-images.githubusercontent.com/58734009/187058886-78f0f1d9-2bc5-4715-80d4-d2b786b51dca.png)
 
    p.s. LUA中，用--表示单行注释，--[[ --]]表示多行注释
+         
+## 4. 配置需要的界面
+         
+   ![image](https://user-images.githubusercontent.com/58734009/192090398-6c958810-8848-4e91-82cc-7eb786ae1bdc.png)
