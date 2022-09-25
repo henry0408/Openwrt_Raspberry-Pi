@@ -19,7 +19,9 @@ HTML教程：https://www.w3schools.com/tags/tag_th.asp
 （最好先学习 LUA 脚本编程）
 
 ## 2. MVC总结
-MVC(Model，View，Controller)模式是一种软件设计模式。视图（view）既软件与用户交互的界面，模型（model）表示数据以及业务规则，控制器（Controller）连接二者的桥梁，接受视图所提交的请求，调用模型去完成请求。
+MVC(Model，View，Controller)模式是一种软件设计模式。视图（view）既软件与用户交互的界面，模型（model）表示数据以及业务规则，控制器（Controller）连接二者的桥梁，接受视图所提交的请求，调用模型去完成请求。\
+![image](https://user-images.githubusercontent.com/58734009/192149812-176c6dc2-7744-4864-a239-8ca52ed172f4.png)
+
 
 LuCI 使用 MVC（模型/视图/控制）模型，在/usr/lib/lua/luci/下有三个目录 model、view、controller，它们分别对应 M、 V、C。\
 LUCI从某些功能的实现来讲属于MVC框架。使用winSCP进入openwrt系统，可以发现在usr/lib/lua/luci文件夹下：
@@ -32,9 +34,35 @@ view文件夹下有大量html文件，即luci的视图文件。controller文件�
 
 我们要做的主要工作就是基于 LuCI 框架编写 LUA 脚本、在 html 页面中嵌入 LUA 脚本。
 
-### 2.1 Model
+### 2.1 Controller
 
+控制层中的文件语法精简结构如下，主要为两个部分：***模块声明*** 和***路由定义***。
+#### 例子1：
+![image](https://user-images.githubusercontent.com/58734009/192149847-0e3dac34-9443-485b-99e1-d7e9c93d5ebc.png)
 
+##### 1. 模块声明：
+文件定义时需要声明其模块名称，按照其路径定义即可，比如该文件位于/luci/controller/admin/network.lua
+
+![image](https://user-images.githubusercontent.com/58734009/192149887-d5a1dd29-73d9-47f2-843c-1c42e6c3babd.png)
+
+#### 2. 路由定义
+上面代码中我们可以看到使用了两种定义路由的方式:
+* 一种是直接使用entry方法来定义一个路由，并传入以下4个参数。
+* 第二种方式是使用node方法直接定义路由的路径，然后分开指定其他target, title等属性。
+
+entry方法内部也是使用node方法，所以两种方式等效。
+
+enrtry方法：\
+![image](https://user-images.githubusercontent.com/58734009/192150383-8bce3184-8de0-42b3-97b2-be8dfb4a73bf.png)
+
+path： 规定了此路由的访问路径，参数是一个字符串数组，比如 {“admin”, “test”, “test_view”} 这样的参数，在页面访问的时候，路径为 /admin/test/test_view ，"test" 是一级菜单。"test_view" 为二级菜单。如果使用node方法直接创建，则需要散列传参，不需要传入table。
+
+target：规定访问此路径时，Luci框架执行的调用目标，根据调用目标的不同，LuCI也有不同的调度行为。所有的target类型，在源码文件 dispatcher.lua中可以找到。
+target主要使用的有alias、firstchild、call、template、cbi、form、arcombine。
+
+title：定义该节点在菜单上显示的名称，非必填项，如果使用了国际化配置，可以使用_(“Router”)这样的表示方式，在中文环境下显示路由，在英文环境下显示Router。如果不填title，则不会在菜单栏上面显示。但是可以通过url进行访问。
+
+order：该节点在同级节点下的显示顺序。非必填项，从上至下，从左至右数值越小显示越靠前。
 
 
 
