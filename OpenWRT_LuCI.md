@@ -18,8 +18,25 @@ HTML教程：https://www.w3schools.com/tags/tag_th.asp
 
 （最好先学习 LUA 脚本编程）
 
-## 2. LuCI 使用 MVC（模型/视图/控制）模型，在/usr/lib/lua/luci/下有三个目录 model、view、controller，它们分别对应 M、 V、C。
+## 2. MVC总结
+MVC(Model，View，Controller)模式是一种软件设计模式。视图（view）既软件与用户交互的界面，模型（model）表示数据以及业务规则，控制器（Controller）连接二者的桥梁，接受视图所提交的请求，调用模型去完成请求。
+
+LuCI 使用 MVC（模型/视图/控制）模型，在/usr/lib/lua/luci/下有三个目录 model、view、controller，它们分别对应 M、 V、C。\
+LUCI从某些功能的实现来讲属于MVC框架。使用winSCP进入openwrt系统，可以发现在usr/lib/lua/luci文件夹下：
+
+/usr/lib/lua/luci/controller/   --控制层: 负责转发请求，对请求进行处理\
+/usr/lib/lua/luci/view/ 		--视图层: 界面设计人员进行图形界面设计\
+/usr/lib/lua/luci/model/cbi/	--模型层：程序员编写程序应有的功能（实现算法等等）、数据库专家进行数据管理和数据库设计(可以实现具体的功能)\
+
+view文件夹下有大量html文件，即luci的视图文件。controller文件夹下存着逻辑控制程序。model文件夹下的cbi文件夹存在着处理各种请求的程序 。
+
 我们要做的主要工作就是基于 LuCI 框架编写 LUA 脚本、在 html 页面中嵌入 LUA 脚本。
+
+### 2.1 Model
+
+
+
+
 
 ## 3. LuCI 将网页中的每一个菜单视作一个节点，如下所示：
 
